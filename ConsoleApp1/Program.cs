@@ -26,7 +26,7 @@ namespace ConsoleApp1
                 "you also can use parameters together.\n" +
                 "Good luck!";
             string helpRu =
-                "Магический шар, монетка и кость ответят на любые ваши вопросы!" +
+                "Магический шар, монетка и кость ответят на любые ваши вопросы!\n" +
                 "Просто введите запрос:\n" +
                 "* ask magic ball - вы получите случайный ответ из набора\n" +
                 "* toss coin - вы получите ответ \"орел\" или \"решка\"\n" +
@@ -117,7 +117,14 @@ namespace ConsoleApp1
                         serialized = JsonConvert.SerializeObject(magicBall);
                         GetAnswer = new HttpRequest();
                         GetAnswer.AddUrlParam("magicball", serialized);
-                        result = GetAnswer.Get("https://localhost:5001/").ToString();
+                        try
+                        {
+                            result = GetAnswer.Get("https://localhost:5001/").ToString();
+                        }
+                        catch
+                        {
+                            result = "Не удалось отправить запрос сервису";
+                        }
                         Console.WriteLine(result);
                         break;
 
@@ -128,7 +135,14 @@ namespace ConsoleApp1
                         serialized = JsonConvert.SerializeObject(coin);
                         GetAnswer = new HttpRequest();
                         GetAnswer.AddUrlParam("coin", serialized);
-                        result = GetAnswer.Get("https://localhost:5001/").ToString();
+                        try
+                        {
+                            result = GetAnswer.Get("https://localhost:5001/").ToString();
+                        }
+                        catch
+                        {
+                            result = "Не удалось отправить запрос сервису";
+                        }
                         Console.WriteLine(result);
                         break;
 
@@ -143,7 +157,14 @@ namespace ConsoleApp1
                         serialized = JsonConvert.SerializeObject(dice);
                         GetAnswer = new HttpRequest();
                         GetAnswer.AddUrlParam("dice", serialized);
-                        result = GetAnswer.Get("https://localhost:5001/").ToString();
+                        try
+                        {
+                            result = GetAnswer.Get("https://localhost:5001/").ToString();
+                        }
+                        catch
+                        {
+                            result = "Не удалось отправить запрос сервису";
+                        }
                         Console.WriteLine(result);
                         break;
 
@@ -155,6 +176,7 @@ namespace ConsoleApp1
                         break;
                 }
                 Console.Write("> ");
+                result = "";
             }
         }
     }

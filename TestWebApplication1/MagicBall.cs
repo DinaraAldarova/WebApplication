@@ -8,24 +8,24 @@ namespace TestWebApplication1
     public class MagicBall
     {
         private Random random;
-        public string[] answers;
-        public string question;
-        
+        public string[] Answers { get; set; }
+        public string Question { get; set; }
+
         public MagicBall()
         {
             random = new Random();
-            answers = new string[] {
+            Answers = new string[] {
                 "Yes",
                 "No",
                 "I don't know"
             };
-            question = "What?";
+            Question = "What?";
         }
 
         public string GetDefaultAnswer() => "Maybe yes, maybe no...";
 
-        public string GetAnswer() => answers[random.Next(answers.Length)];
+        public string GetAnswer() => Answers[random.Next(Answers.Length)];
 
-        public string GetAnswerQuestion() => question + "\n" + GetAnswer();
+        public string GetAnswerQuestion() => Question + "\n" + GetAnswer();
     }
 }

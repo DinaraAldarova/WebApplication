@@ -1,0 +1,18 @@
+﻿В проекте использовался следующий код:
+
+- автоматически генерируемый при создании проекта код
+- библиотека Newtonsoft.Json
+- библиотека XNet
+- материал из сети Интернет (ресурс metanit.com)
+
+Newtonsoft.Json
+https://github.com/JamesNK/Newtonsoft.Json/blob/master/LICENSE.md
+MIT license, свободное распространение и коммерческое использование
+
+XNet
+https://github.com/X-rus/xNet/blob/master/LICENSE.txt
+BSD license, свободное распространение
+
+Статья с ресурса metanit.com:
+https://metanit.com/sharp/aspnet5/2.19.php
+(идея реализации веб-службы)

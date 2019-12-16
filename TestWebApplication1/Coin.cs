@@ -23,7 +23,7 @@ namespace TestWebApplication1
 
         public string GetAnswer()
         {
-            if (random.Next(0, 1) == 0)
+            if (random.NextDouble() > 0.5)
                 return obverse;
             else
                 return reverse;
